@@ -68,7 +68,7 @@ export const Account = () => {
             </S.OrdersReceived>
           </S.Box>
           <S.Box>
-          <S.AvgSessions />
+            <AvgSessions />
           <S.SupportTracker>
             {/* <S.SubContentSupportTracker>
               <S.SubTitle size={"1.8"} weight={"500"} lineHeight={"22"}>
