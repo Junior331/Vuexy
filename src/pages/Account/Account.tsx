@@ -20,12 +20,15 @@ export const Account = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 0.5));
+      setProgress((prevProgress) =>
+        prevProgress >= 100 ? 0 : prevProgress + 0.5
+      );
     }, 1000);
     return () => {
       clearInterval(timer);
     };
   }, [progress]);
+
   return (
     <S.AccountContainer>
       <Menu />
@@ -69,8 +72,8 @@ export const Account = () => {
           </S.Box>
           <S.Box>
             <AvgSessions />
-          <S.SupportTracker>
-            {/* <S.SubContentSupportTracker>
+            <S.SupportTracker>
+              {/* <S.SubContentSupportTracker>
               <S.SubTitle size={"1.8"} weight={"500"} lineHeight={"22"}>
                 Support Tracker
               </S.SubTitle>
@@ -85,7 +88,7 @@ export const Account = () => {
               </S.SubContentSupportTracker>
               <SupportTrackerProgress value={progress} />
             </S.SubContentSupportTracker> */}
-          </S.SupportTracker>
+            </S.SupportTracker>
           </S.Box>
           <S.UserTimeline />
           <S.Sales />
