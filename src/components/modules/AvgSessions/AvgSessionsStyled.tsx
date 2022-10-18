@@ -6,11 +6,11 @@ type AvgSessionsStyledProps = {
 };
 
 export const AvgSessionsContainer = styled.div<AvgSessionsStyledProps>`
-  width: ${({ width }) => width || '678px'};
+  width: ${({ width }) => width || '548px'};
   height: ${({ height }) => height || '430px'};
   background: #283046;
   border-radius: 6px;
-  min-width: 678px;
+  min-width: 548px;
   min-height: 430px;
   color: white;
 
@@ -118,9 +118,9 @@ export const AvgSessionsFooter = styled.div`
   width: 100%;
   height: 40%;
   display: flex;
-  gap: 20px 120px;
   flex-wrap: wrap;
-  padding: 24px 80px 32px 33px;
+  gap: 20px 54px;
+  padding: 24px 21px 32px 27px;
 
   @media (max-width: 768px) {
     padding: 17px 30px 23px 30px;
