@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
+
 import images from "../../assets/img";
 import icons from "../../assets/img/icons";
-import { Header } from "../../components/modules/Header";
-import { Menu } from "../../components/modules/Menu";
-import { SupportTrackerProgress } from "../../components/modules/SupportTrackerProgress";
+
+import {
+  AvgSessions,
+  Header,
+  Menu,
+} from "../../components/modules";
+
 import * as S from "./AccountStyled";
 
 export const Account = () => {
