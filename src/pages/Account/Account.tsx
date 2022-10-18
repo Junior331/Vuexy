@@ -14,9 +14,9 @@ import * as S from "./AccountStyled";
 export const Account = () => {
   const [progress, setProgress] = useState(0);
 
-  const progressCircle = (newProgress: number) => {
-    setProgress(newProgress);
-  };
+  // const progressCircle = (newProgress: number) => {
+  //   setProgress(newProgress);
+  // };
 
   useEffect(() => {
     const timer = setInterval(() => {
