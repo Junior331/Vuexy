@@ -57,10 +57,8 @@ const Form = () => {
         }
       }).then(function(response: any) {
         let data = response?.data
-        navigation('/Account', {
-          state: { data }        
-        });
-        
+        localStorage.setItem("token", data.token);   
+        navigation('/lovemonster/account'); 
       }).catch(function(error) {
         setLoad(false);
         console.log(error)

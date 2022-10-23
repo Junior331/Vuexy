@@ -11,17 +11,18 @@ import {
   UserWallet,
   UserResponse,
 } from "../../utils/connectors";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { profileType } from "./@types";
 import { accountSchema, nftAddressSchema, lmtAddressSchema } from "./AccountSchema_bac";
 import * as S from "./AccountStyled_bac";
 // import { Menu } from "./Components/Menu";
 import { getNakamaServer, nakamaHttpKey } from "../../utils/connectors";
 import { ethers } from "ethers";
-import { Menu } from "../../components/modules/Menu";
+import { Menu } from "../../components/modules/Layout/Components/Menu";
 
 export const Account = () => {
-  const { state }: any = useLocation();
+  const token = localStorage.getItem("token");
+
   
   const navigate = useNavigate();
 
@@ -88,7 +89,7 @@ export const Account = () => {
     axios
       .get(`${nakamaServer}v2/account`, {
         headers: {
-          Authorization: "Bearer " + state.data.token,
+          Authorization: "Bearer " + token,
         },
       })
       .then(function (response: any) {
@@ -107,7 +108,7 @@ export const Account = () => {
         {},
         {
           headers: {
-            Authorization: "Bearer " + state.data.token,
+            Authorization: "Bearer " + token,
           },
         }
       )
@@ -158,7 +159,7 @@ export const Account = () => {
         { wallet_address: UserAddress, signed_msg: signedMsg, timestamp },
         {
           headers: {
-            Authorization: "Bearer " + state.data.token,
+            Authorization: "Bearer " + token,
           },
         }
       )
@@ -189,7 +190,7 @@ export const Account = () => {
         },
         {
           headers: {
-            Authorization: "Bearer " + state.data.token,
+            Authorization: "Bearer " + token,
           },
         }
       )
@@ -219,7 +220,7 @@ export const Account = () => {
         },
         {
           headers: {
-            Authorization: "Bearer " + state.data.token,
+            Authorization: "Bearer " + token,
           },
         }
       )

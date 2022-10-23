@@ -4,6 +4,7 @@ import file from "./File.svg";
 import user from "./User.svg";
 import flag from "./Flag.svg";
 import star from "./Star.svg";
+import menu from "./Menu.svg";
 import cube from "./Cube.svg";
 import users from "./Users.svg";
 import email from "./Email.svg";
@@ -16,6 +17,7 @@ import ecommerce from "./Ecommerce.svg";
 import fileNoLine from "./File_noLine.svg";
 import loadingGray from "./loading-gray.svg";
 import notification from "./Notification.svg";
+import arrowRight from "./arrowRight.svg";
 interface IIcon<TValue> {
   [id: string]: TValue;
 }
@@ -28,6 +30,7 @@ const icons: IIcon<string> = {
   chat,
   star,
   flag,
+  menu,
   email,
   medal,
   users,
@@ -36,6 +39,7 @@ const icons: IIcon<string> = {
   checked,
   calendar,
   ecommerce,
+  arrowRight,
   fileNoLine,
   loadingGray,
   notification,

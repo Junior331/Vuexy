@@ -5,7 +5,7 @@ export const SupportTrackerProgressContainer = styled.div`
   height: 100%;
   display: flex;
   position: sticky;
-  max-width: 268px;
+  max-width: 400px;
   max-height: 268px;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@ export const SupportTrackerProgressContainer = styled.div`
     background: linear-gradient(300deg, #E7555B 24.14%, #BD5C91 49.42%, #9263CA 75.77%);
   }
   .MuiBox-root {
-    transform: rotateZ(180deg);
+    transform: rotate3d(1295, -70, 0, 180deg);
     .MuiBox-root {
       > div:first-child {
         width: 100%;
@@ -32,7 +32,11 @@ export const SupportTrackerProgressContainer = styled.div`
     }
   }
   .MuiTypography-root{
-    z-index: 1
+    z-index: 1;
+    line-height: 29px;
+    color: ${(props) => props.theme.palette.text.light};
+    font-weight: ${(props) => props.theme.typography.fontWeightRegular};
+    font-size: ${(props) => props.theme.typography.fontSizeRegular + 0.2}rem;
   }
 `;
 

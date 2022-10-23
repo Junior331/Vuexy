@@ -3,3 +3,8 @@ export type profileType = {
   email: string;
   wallet: string;
 };
+export type TitleType = {
+  size: string;
+  weight: string;
+  lineHeight: string;
+};

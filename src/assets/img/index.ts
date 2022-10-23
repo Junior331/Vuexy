@@ -1,6 +1,7 @@
 import lmtTokens from "./lmt_tokens.png";
 import appleWatch from "./AppleWatch.svg";
 import decoreLeft from "./decore_left.svg";
+import lovemonster from "./lovemonster.png";
 import decoreRight from "./decore_right.svg";
 import logo from "./love_monster_logo_final.png";
 import ordersReceived from "./OrdersReceived.svg";
@@ -21,6 +22,7 @@ const images: IImage<string> = {
   appleWatch,
   decoreLeft,
   decoreRight,
+  lovemonster,
   ordersReceived,
   monsterCharacter,
   subscribersGained,
