@@ -18,7 +18,6 @@ export const Menu = styled.div`
 export const Content = styled.div`
   width: 75%;
   height: 100%;
-  padding: 20px;
   display: flex;
   align-items: start;
   flex-direction: column;

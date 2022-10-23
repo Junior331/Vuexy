@@ -1,15 +1,20 @@
 import { Box, Typography } from "@mui/material";
-import CircularProgress, {
-  CircularProgressProps,
-} from "@mui/material/CircularProgress";
+import CircularProgress from "@mui/material/CircularProgress";
+import { Props } from "./@types";
 import RadialDasheds from "./Components/RadialDasheds";
 import * as S from "./SupportTrackerProgressStyled";
-
-const SupportTrackerProgress = (props: CircularProgressProps & { value: number }) => {
+const SupportTrackerProgress = ({ progress }: Props) => {
   return (
     <S.SupportTrackerProgressContainer>
-      <Box sx={{ position: "relative", display: "inline-flex", width: "268px", height: "268px" }}>
-        <CircularProgress variant="determinate" {...props} />
+      <Box
+        sx={{
+          position: "relative",
+          display: "inline-flex",
+          width: "268px",
+          height: "268px",
+        }}
+      >
+        <CircularProgress variant="determinate" />
         <Box
           sx={{
             top: 0,
@@ -22,13 +27,13 @@ const SupportTrackerProgress = (props: CircularProgressProps & { value: number }
             justifyContent: "center",
           }}
         >
-          <RadialDasheds count={35}/>
+          <RadialDasheds count={35} />
           <S.Circle />
           <Typography
             variant="caption"
             component="div"
             color="text.secondary"
-          >{`${Math.round(0)}%`}</Typography>
+          >{`${Math.round(progress)}%`}</Typography>
         </Box>
       </Box>
     </S.SupportTrackerProgressContainer>

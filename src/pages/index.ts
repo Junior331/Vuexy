@@ -1,6 +1,7 @@
 import { Account } from "./Account";
 import { SignIn } from "./SignIn";
 import { SignUp } from "./SignUp";
-import { EmailConfirmation } from "./EmailConfirmation"
+import { Migration } from "./Migration";
+import { EmailConfirmation } from "./EmailConfirmation";
 
-export { SignUp, SignIn, Account, EmailConfirmation};
+export { Migration, SignUp, SignIn, Account, EmailConfirmation };

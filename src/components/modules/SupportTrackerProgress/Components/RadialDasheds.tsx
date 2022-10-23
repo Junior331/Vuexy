@@ -7,7 +7,7 @@ const RadialDasheds = ({count}: Props) => {
   return (
     <S.DashedContainer>
       {_.range(count).map((index) => (
-        <S.Content turns={index * turns}>
+        <S.Content key={index} turns={index * turns}>
           <S.Line />
         </S.Content>
       ))}

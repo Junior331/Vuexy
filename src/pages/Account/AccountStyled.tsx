@@ -1,16 +1,13 @@
 import styled, { css } from "styled-components";
 import { getImage } from "../../assets/img";
 import media from "../../styles/breakpoints";
+import { TitleType } from "./@types";
 
-export const SubTitle = styled.h2<{
-  size?: string;
-  weight?: string;
-  lineHeight?: string;
-}>`
-  font-size: ${(props) => props.size}rem;
-  font-weight: ${(props) => props.weight};
-  line-height: ${(props) => props.lineHeight}px;
-  color: ${(props) => props.theme.palette.text.light};
+export const Title = styled.h2<TitleType>`
+  font-size: ${({ size }) => size}rem;
+  font-weight: ${({ weight }) => weight};
+  line-height: ${({ lineHeight }) => lineHeight}px;
+  color: ${(props) => props.theme.palette.text.white};
 `;
 const ContainerGeneric = styled.div`
   width: 100%;
@@ -25,13 +22,12 @@ const ContainerGeneric = styled.div`
     width: 100% !important;
   `}
 `;
-export const AccountContainer = styled(ContainerGeneric)``;
+export const AccountContainer = styled(ContainerGeneric)`
+  max-height: 84.5vh;
+`;
 export const Content = styled(ContainerGeneric)`
-  padding: 20px;
   align-items: start;
   flex-direction: column;
-  padding: 15px 28px 21px;
-  background-color: ${(props) => props.theme.palette.background.dark};
   ${media.lessThan("medium")`
     width: 100%;
   `}
@@ -43,7 +39,7 @@ export const SubContent = styled(ContainerGeneric)`
   flex-wrap: wrap;
   max-height: 100vh;
   padding-top: 21px;
-  max-width: 1150px;
+  /* max-width: 1150px; */
   overflow-y: auto;
   align-items: flex-start;
   justify-content: flex-start;
@@ -95,6 +91,8 @@ export const ContainerIcon = styled.div<{ color?: string; small?: boolean }>`
     props.color ? "none" : "0px 4px 10px rgba(0, 0, 0, 0.38)"};
 `;
 export const Icon = styled.img<{ small?: boolean }>`
+  width: 28px;
+  height: 28px;
   ${(props) =>
     props.small &&
     css`
@@ -102,13 +100,18 @@ export const Icon = styled.img<{ small?: boolean }>`
       height: 24px;
     `};
 `;
-export const Text = styled.p<{white?: boolean}>`
+export const Text = styled.p<{ white?: boolean }>`
+  width: 100%;
+  margin: 10px 0;
+  text-align: center;
   line-height: 21px;
   max-width: 358.16px;
-  text-align: center;
   font-size: ${(props) => props.theme.typography.fontSize}rem;
   font-weight: ${(props) => props.theme.typography.fontWeightLight};
-  color: ${(props) => props.white ? props.theme.palette.text.white: props.theme.palette.text.regular};
+  color: ${(props) =>
+    props.white
+      ? props.theme.palette.text.white
+      : props.theme.palette.text.regular};
 `;
 export const Box = styled(ContainerGeneric)`
   gap: 28px;
@@ -166,63 +169,4 @@ export const OrdersReceived = styled(ContainerGeneric)`
   h2 {
     margin: 13px 0 7px;
   }
-`;
-export const AvgSessions = styled(ContainerGeneric)`
-  width: 548px;
-  height: 430px;
-  padding: 18px 20px;
-  border-radius: 6px;
-  background: #283046;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-`;
-export const SupportTracker = styled(ContainerGeneric)`
-  width: 548px;
-  height: 430px;
-  padding: 18px 20px;
-  border-radius: 6px;
-  background: #283046;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-`;
-export const SubContentSupportTracker = styled.div<{ column?: boolean }>`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  ${(props) =>
-    props.column &&
-    css`
-      width: auto;
-      flex-direction: column;
-  `};
-`;
-export const UserTimeline = styled(ContainerGeneric)`
-  width: 356px;
-  height: 476px;
-  border-radius: 6px;
-  background: #283046;
-`;
-export const Sales = styled(ContainerGeneric)`
-  width: 356px;
-  height: 476px;
-  border-radius: 6px;
-  background: #283046;
-`;
-export const AppDesign = styled(ContainerGeneric)`
-  width: 356px;
-  height: 476px;
-  border-radius: 6px;
-  background: #283046;
-`;
-export const Table = styled.table`
-  width: 100%;
-  height: 505px;
-  border-radius: 6px;
-  background: #283046;
-  ${media.greaterThan("huge")`
-    width: 98.52%;
-  `}
 `;
