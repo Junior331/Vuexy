@@ -3,14 +3,17 @@ import styled from "styled-components";
 export const TableContainer = styled.table`
   width: 100%;
   border-collapse: collapse;
-  background-color: #151c2f;
+  background-color: #151C2F;
+  padding: 0 25px;
 `;
 
 export const Thead = styled.thead`
-  background-color: #283046;
+  background-color: #343D55;
 `;
 
 export const TrHead = styled.tr`
+  color: #D0D2D6;
+  background-color: #283046;
   border: 0px;
   color: #d0d2d6;
   text-align: left;
@@ -19,7 +22,9 @@ export const TrHead = styled.tr`
 
 export const ThHeader = styled.th`
   padding: 5px;
-  text-align: ${(props) => props.align};
+  text-align: ${props => props.align || 'left'};
+  font-size: 12px;
+  font-weight: 600;
 `;
 
 export const TrBody = styled.tr`
@@ -28,10 +33,16 @@ export const TrBody = styled.tr`
   border-top: 2pt solid #3B4253;
 `;
 
+export const TdId = styled.td`
+  color: #7367F0;
+  font-weight: 600;
+  font-size: 14px;
+`;
+
 export const Tbody = styled.tbody``;
 
 export const TdBody = styled.td`
-  text-align: center;
+  text-align: ${props => props.align || 'left'};
 `;
 
 export const CustomTdName = styled(TdBody)`
@@ -60,15 +71,6 @@ export const UserName = styled.p``;
 
 export const UserEmail = styled.p``;
 
-// export const TableContainer = styled(ContainerGeneric)`
-//   width: 100%;
-//   height: 505px;
-//   border-radius: 6px;
-//   background: #283046;
-//   ${media.greaterThan("huge")`
-//     width: 98.52%;
-//   `}
-// `;
 export const PaginationWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -100,4 +102,21 @@ export const Img = styled.img<{
   background-color: ${(props) => {
     return 'var(--main-color)';
   }};
+`;
+
+
+// Balance styled components
+
+export const BalancePaidText = styled.span`
+  background-color: rgba(40, 199, 111, 0.12);
+  border-radius: 17px;
+  padding: 1px 9px;
+  color: #28C76F;
+  font-size: 12px;
+`;
+
+export const BalanceText = styled.p`
+  font-weight: 400;
+  font-size: 14px;
+  color: #B4B7BD;
 `;

@@ -2,6 +2,7 @@ import icons from "../../../assets/img/icons";
 import { LIST } from "../../../services/mocks/List";
 import { ItemList } from "./@types";
 import * as S from "./TableStyled";
+import StatusIcon from '../../../assets/img/icons/Cube.svg';
 
 interface IColumns {
   header: string;
@@ -49,16 +50,14 @@ export const Table = () => {
               <S.ThHeader align="center">
                 <img src={column.headerIcon} alt={column.header} />
               </S.ThHeader>
-            ) : (
-              <S.ThHeader align={index === 0 ? "center" : "left"}>
-                {column.header}
-              </S.ThHeader>
+            ): (
+              <S.ThHeader align={index === 0 ? 'center' : 'left'}>{column.header}</S.ThHeader>
             )}
           </>
         ))}
       </S.TrHead>
       <S.Tbody>
-        {data.map((item, i) => {
+        {data.map((item) => {
           return (
             <S.TrBody>
               <S.TdBody>#{item.id}</S.TdBody>
@@ -80,4 +79,13 @@ export const Table = () => {
       </S.Tbody>
     </S.TableContainer>
   );
+};
+
+
+const BalanceContent = ({balance}: {balance: TypeBalance}) => {
+  const isPaid = balance === 'Paid';
+
+  if (isPaid) return <S.BalancePaidText>{balance}</S.BalancePaidText>
+
+  return <S.BalanceText>{balance}</S.BalanceText>
 };
