@@ -1,6 +1,6 @@
 import icons from "../../../assets/img/icons";
 import { LIST } from "../../../services/mocks/List";
-import { ItemList } from "./@types";
+import { ItemList, TypeBalance } from "./@types";
 import * as S from "./TableStyled";
 import StatusIcon from '../../../assets/img/icons/Cube.svg';
 
@@ -60,7 +60,7 @@ export const Table = () => {
         {data.map((item) => {
           return (
             <S.TrBody>
-              <S.TdBody>#{item.id}</S.TdBody>
+              <S.TdId>#{item.id}</S.TdId>
               <S.TdBody>
                 <S.Img variant={item.type} src={item.icon} alt="status icon" />
               </S.TdBody>
@@ -72,7 +72,7 @@ export const Table = () => {
                 </S.ColumnBox>
               </S.CustomTdName>
               <S.TdBody>{item.total}</S.TdBody>
-              <S.TdBody>{item.balance}</S.TdBody>
+              <S.TdBody><BalanceContent balance={item.balance}/></S.TdBody>
             </S.TrBody>
           );
         })}
