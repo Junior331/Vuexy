@@ -21,6 +21,8 @@ import arrowRight from "./arrowRight.svg";
 import send from "./send.svg";
 import view from "./view.svg";
 import more from "./more.svg";
+import chevronDown from "./chevron-down.svg";
+import chevronUp from "./chevron-up.svg";
 interface IIcon<TValue> {
   [id: string]: TValue;
 }
@@ -48,7 +50,9 @@ const icons: IIcon<string> = {
   notification,
   send,
   view,
-  more
+  more,
+  chevronDown,
+  chevronUp
 };
 
 export const getIcon = (id: string) => icons[id];

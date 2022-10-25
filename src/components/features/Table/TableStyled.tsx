@@ -27,6 +27,9 @@ export const ThHeader = styled.th`
   font-weight: 600;
 `;
 
+export const ThHeaderContent = styled.div`
+`;
+
 export const TrBody = styled.tr`
   color: #d0d2d6;
   padding-left: 5px;
@@ -48,13 +51,12 @@ export const TdBody = styled.td`
   color: #B4B7BD;
 `;
 
-export const CustomTdName = styled(TdBody)`
+export const NameContainer = styled.div`
   gap: 10px;
   display: flex;
   padding: 19px 0;
   align-items: center;
   justify-content: flex-start;
-  // justify-content: center;
 `;
 
 export const UserImg = styled.img`
@@ -134,5 +136,20 @@ export const ActionsContainer = styled.div`
 export const ActionIcon = styled.img`
   width: 20.85px;
   height: 18px;
+  cursor: pointer;
+`;
+
+
+// SortByColumn styled components
+
+export const SortContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+`;
+
+export const SortArrow = styled.img`
+  width: 16.22px;
+  height: 14px;
   cursor: pointer;
 `;

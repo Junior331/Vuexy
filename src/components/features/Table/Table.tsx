@@ -8,33 +8,40 @@ interface IColumns {
   header: string;
   headerIcon?: string;
   accessorKey: string;
+  hasSort?: boolean;
 }
 
 const columns: IColumns[] = [
   {
     header: "#",
     accessorKey: "id",
+    hasSort: true,
   },
   {
     header: "status",
     headerIcon: icons.cube,
     accessorKey: "icon",
+    hasSort: true,
   },
   {
     header: "NAME",
     accessorKey: "name",
+    hasSort: true,
   },
   {
     header: "TOTAL",
     accessorKey: "total",
+    hasSort: true,
   },
   {
     header: "BALANCE",
     accessorKey: "balance",
+    hasSort: true,
   },
   {
     header: "ACTIONS",
     accessorKey: "avatar",
+    hasSort: false,
   },
 ];
 
@@ -44,35 +51,52 @@ export const Table = () => {
   return (
     <S.TableContainer>
       <S.TrHead>
-        {columns.map((column, index) => (
+      {columns.map((column, index) => (
           <>
-            {column.headerIcon ? (
-              <S.ThHeader align="center">
-                <img src={column.headerIcon} alt={column.header} />
-              </S.ThHeader>
-            ): (
-              <S.ThHeader align={index === 0 ? 'center' : 'left'}>{column.header}</S.ThHeader>
-            )}
+            <S.ThHeader align={(index === 0 && column.headerIcon) ? 'center' : 'left'}>
+              <S.ThHeaderContent>
+                {column.headerIcon ? (
+                    <img src={column.headerIcon} alt={column.header} />
+                ): (
+                  <>
+                    {column.header}
+                  </>
+                )}
+              </S.ThHeaderContent>
+            </S.ThHeader>
+            {column.hasSort ? (
+              <th>
+                <SortByColumn column={column}/>
+              </th>
+            ) : <></>}
           </>
         ))}
+        
       </S.TrHead>
       <S.Tbody>
         {data.map((item) => {
           return (
             <S.TrBody>
               <S.TdId>#{item.id}</S.TdId>
+              <TableEmptyGap />
               <S.TdBody>
                 <S.Img variant={item.type} src={item.icon} alt="status icon" />
               </S.TdBody>
-              <S.CustomTdName>
+              <TableEmptyGap />
+              <S.TdBody>
+              <S.NameContainer>
                 <S.UserImg src={item.avatar} alt="user name" />
                 <S.ColumnBox>
                   <S.UserName>{item.name}</S.UserName>
                   <S.UserEmail>{item.email}</S.UserEmail>
                 </S.ColumnBox>
-              </S.CustomTdName>
+              </S.NameContainer>
+              </S.TdBody>
+              <TableEmptyGap />
               <S.TdBody>{item.total}</S.TdBody>
+              <TableEmptyGap />
               <S.TdBody><BalanceContent balance={item.balance}/></S.TdBody>
+              <TableEmptyGap />
               <S.TdBody>
                 <ActionsContent item={item} />
               </S.TdBody>
@@ -84,6 +108,7 @@ export const Table = () => {
   );
 };
 
+const TableEmptyGap = () => <div style={{width: '5px', height: '5px'}}></div>;
 
 const BalanceContent = ({balance}: {balance: TypeBalance}) => {
   const isPaid = balance === 'Paid';
@@ -107,3 +132,16 @@ const ActionsContent = ({item}: {item: ItemList}) => {
     </S.ActionsContainer>
   )
 };
+
+const SortByColumn = ({column}: {column: IColumns}) => {
+
+  const onUp = () => { console.log('onUp ---> ', column.header)};
+  const onDown = () => { console.log('onDown ---> ', column.header)};
+
+  return (
+    <S.SortContainer>
+      <S.SortArrow src={icons.chevronUp} alt='arrow up' onClick={onUp} />
+      <S.SortArrow src={icons.chevronDown} alt='arrow down' onClick={onDown} />
+    </S.SortContainer>
+  )
+}
