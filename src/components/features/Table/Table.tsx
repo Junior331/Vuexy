@@ -73,6 +73,9 @@ export const Table = () => {
               </S.CustomTdName>
               <S.TdBody>{item.total}</S.TdBody>
               <S.TdBody><BalanceContent balance={item.balance}/></S.TdBody>
+              <S.TdBody>
+                <ActionsContent item={item} />
+              </S.TdBody>
             </S.TrBody>
           );
         })}
@@ -88,4 +91,19 @@ const BalanceContent = ({balance}: {balance: TypeBalance}) => {
   if (isPaid) return <S.BalancePaidText>{balance}</S.BalancePaidText>
 
   return <S.BalanceText>{balance}</S.BalanceText>
+};
+
+const ActionsContent = ({item}: {item: ItemList}) => {
+
+  const onSend = () => { console.log('onSend ---> ', item.name, item.id)};
+  const onView = () => { console.log('onView ---> ', item.name, item.id)};
+  const onMore = () => { console.log('onMore ---> ', item.name, item.id)};
+
+  return (
+    <S.ActionsContainer>
+      <S.ActionIcon src={icons.send} onClick={onSend} />
+      <S.ActionIcon src={icons.view} onClick={onView} />
+      <S.ActionIcon src={icons.more} onClick={onMore} />
+    </S.ActionsContainer>
+  )
 };

@@ -18,6 +18,9 @@ import fileNoLine from "./File_noLine.svg";
 import loadingGray from "./loading-gray.svg";
 import notification from "./Notification.svg";
 import arrowRight from "./arrowRight.svg";
+import send from "./send.svg";
+import view from "./view.svg";
+import more from "./more.svg";
 interface IIcon<TValue> {
   [id: string]: TValue;
 }
@@ -43,6 +46,9 @@ const icons: IIcon<string> = {
   fileNoLine,
   loadingGray,
   notification,
+  send,
+  view,
+  more
 };
 
 export const getIcon = (id: string) => icons[id];

@@ -43,6 +43,9 @@ export const Tbody = styled.tbody``;
 
 export const TdBody = styled.td`
   text-align: ${props => props.align || 'left'};
+  font-size: 14px;
+  font-weight: 400;
+  color: #B4B7BD;
 `;
 
 export const CustomTdName = styled(TdBody)`
@@ -119,4 +122,17 @@ export const BalanceText = styled.p`
   font-weight: 400;
   font-size: 14px;
   color: #B4B7BD;
+`;
+
+// Actions styled components
+
+export const ActionsContainer = styled.div`
+  display: flex;
+  gap: 20.85px;
+`;
+
+export const ActionIcon = styled.img`
+  width: 20.85px;
+  height: 18px;
+  cursor: pointer;
 `;
