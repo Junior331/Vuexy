@@ -1,41 +1,41 @@
-import { LIST } from "../../../services/mocks/List";
+import icons from "../../../../assets/img/icons";
+import { LIST } from "../../../../services/mocks/List";
+import { ItemList } from "./@types";
 import * as S from "./TableStyled";
-import StatusIcon from '../../../assets/img/icons/Cube.svg';
 
 interface IColumns {
   header: string;
-  headerIcon?: string ;
+  headerIcon?: string;
   accessorKey: string;
-};
+}
 
 const columns: IColumns[] = [
-    {
-      header: '#',
-      accessorKey: 'id'
-    },
-    {
-      header: 'status',
-      headerIcon: StatusIcon,
-      accessorKey: 'icon' 
-    },
-    {
-      header: 'NAME',
-      accessorKey: 'name'
-    },
-    {
-      header: 'TOTAL',
-      accessorKey: 'total'
-    },
-    {
-      header: 'BALANCE',
-      accessorKey: 'balance'
-    },
-    {
-      header: 'ACTIONS',
-      accessorKey: 'avatar'
-    }
-  ];
-
+  {
+    header: "#",
+    accessorKey: "id",
+  },
+  {
+    header: "status",
+    headerIcon: icons.cube,
+    accessorKey: "icon",
+  },
+  {
+    header: "NAME",
+    accessorKey: "name",
+  },
+  {
+    header: "TOTAL",
+    accessorKey: "total",
+  },
+  {
+    header: "BALANCE",
+    accessorKey: "balance",
+  },
+  {
+    header: "ACTIONS",
+    accessorKey: "avatar",
+  },
+];
 
 export const Table = () => {
   const data = LIST;
@@ -46,36 +46,36 @@ export const Table = () => {
         {columns.map((column, index) => (
           <>
             {column.headerIcon ? (
-              <S.ThHeader align='center'>
+              <S.ThHeader align="center">
                 <img src={column.headerIcon} alt={column.header} />
               </S.ThHeader>
-            ): (
-              <S.ThHeader align={index === 0 ? 'center' : 'left'}>{column.header}</S.ThHeader>
+            ) : (
+              <S.ThHeader align={index === 0 ? "center" : "left"}>
+                {column.header}
+              </S.ThHeader>
             )}
           </>
         ))}
       </S.TrHead>
       <S.Tbody>
-        {data.map((item, i) => {
+        {data.map((item: ItemList, i: number) => {
           return (
-            <>
-              <S.TrBody>
-                <S.TdBody>{item.id}</S.TdBody>
-                <S.TdBody>
-                  <img src={item.icon} alt='status icon' />
-                </S.TdBody>
-                <S.CustomTdName>
-                  <S.UserImg src={item.avatar} alt='user name' />
-                  <S.ColumnBox>
-                    <S.UserName>{item.name}</S.UserName>  
-                    <S.UserEmail>{item.email}</S.UserEmail>  
-                  </S.ColumnBox>  
-                </S.CustomTdName>  
-                <S.TdBody>{item.total}</S.TdBody>           
-                <S.TdBody>{item.balance}</S.TdBody>           
-              </S.TrBody>   
-            </>
-          )
+            <S.TrBody>
+              <S.TdBody>#{item.id}</S.TdBody>
+              <S.TdBody>
+                <S.Img variant={item.type} src={item.icon} alt="status icon" />
+              </S.TdBody>
+              <S.CustomTdName>
+                <S.UserImg src={item.avatar} alt="user name" />
+                <S.ColumnBox>
+                  <S.UserName>{item.name}</S.UserName>
+                  <S.UserEmail>{item.email}</S.UserEmail>
+                </S.ColumnBox>
+              </S.CustomTdName>
+              <S.TdBody>{item.total}</S.TdBody>
+              <S.TdBody>{item.balance}</S.TdBody>
+            </S.TrBody>
+          );
         })}
       </S.Tbody>
     </S.TableContainer>

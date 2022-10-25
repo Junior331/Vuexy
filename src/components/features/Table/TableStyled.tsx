@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const TableContainer = styled.table`
   width: 100%;
-  background-color: #151C2F;
+  border-collapse: collapse;
+  background-color: #151c2f;
 `;
 
 export const Thead = styled.thead`
@@ -10,20 +11,21 @@ export const Thead = styled.thead`
 `;
 
 export const TrHead = styled.tr`
-  color: #D0D2D6;
-  background-color: #283046;
   border: 0px;
+  color: #d0d2d6;
   text-align: left;
+  background-color: #283046;
 `;
 
 export const ThHeader = styled.th`
   padding: 5px;
-  text-align: ${props => props.align}
+  text-align: ${(props) => props.align};
 `;
 
 export const TrBody = styled.tr`
-  color: #D0D2D6;
+  color: #d0d2d6;
   padding-left: 5px;
+  border-top: 2pt solid #3B4253;
 `;
 
 export const Tbody = styled.tbody``;
@@ -33,7 +35,11 @@ export const TdBody = styled.td`
 `;
 
 export const CustomTdName = styled(TdBody)`
+  gap: 10px;
   display: flex;
+  padding: 19px 0;
+  align-items: center;
+  justify-content: flex-start;
   // justify-content: center;
 `;
 
@@ -44,7 +50,9 @@ export const UserImg = styled.img`
 `;
 
 export const ColumnBox = styled.div`
+  gap: 5px;
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
 `;
 
@@ -70,4 +78,26 @@ export const PaginationWrapper = styled.div`
   @media (max-width: 968px) {
     justify-content: center;
   }
+`;
+
+export const Img = styled.img<{
+  variant: "send" | "chart" | "arrowDownCircle";
+}>`
+  --main-color: ${(props) => {
+    switch (props.variant) {
+      case "send":
+        return "#6c757d1e;";
+      case "chart":
+        return "#28c76f1e;";
+      case "arrowDownCircle":
+        return "#00cfe81e;";
+      default:
+        return "#6c757d1e";
+    }
+  }};
+  border-radius: 45px;
+  padding: 7.5px 6.5px;
+  background-color: ${(props) => {
+    return 'var(--main-color)';
+  }};
 `;
