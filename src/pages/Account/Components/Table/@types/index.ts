@@ -5,6 +5,7 @@ export enum TypeBalance {
 
 export type ItemList = {
   id: string;
+  type: string;
   icon: string;
   name: string;
   email: string;

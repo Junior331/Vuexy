@@ -1,5 +1,5 @@
-import icons from "../../../../assets/img/icons";
-import { LIST } from "../../../../services/mocks/List";
+import icons from "../../../assets/img/icons";
+import { LIST } from "../../../services/mocks/List";
 import { ItemList } from "./@types";
 import * as S from "./TableStyled";
 
@@ -58,7 +58,7 @@ export const Table = () => {
         ))}
       </S.TrHead>
       <S.Tbody>
-        {data.map((item: ItemList, i: number) => {
+        {data.map((item, i) => {
           return (
             <S.TrBody>
               <S.TdBody>#{item.id}</S.TdBody>
