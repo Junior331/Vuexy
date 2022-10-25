@@ -22,7 +22,7 @@ export const LIST: ItemList[] = [
       "https://i.pinimg.com/originals/d8/ac/9d/d8ac9d666043f14e1dae7ee272637304.jpg",
     balance: "-$202",
   }),
-  ...new Array(38).fill({
+  ...new Array(3).fill({
     id: Math.floor(Math.random() * 1000),
     icon: icons.star,
     name: "Matilda Robertson",

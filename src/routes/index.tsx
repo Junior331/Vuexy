@@ -5,6 +5,7 @@ import {
   SignUp,
   EmailConfirmation,
   Migration,
+  ExampleTable,
 } from "../pages";
 
 export const AppRoutes = () => {
@@ -12,6 +13,7 @@ export const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<SignIn />} />
       <Route path="/signUp" element={<SignUp />} />
+      <Route path="/example-table" element={<ExampleTable/>} />
       <Route path="*" element={<Navigate to="/" />} />
       <Route path="/lovemonster/account" element={<Account />} />
       <Route path="/lovemonster/migration" element={<Migration />} />
