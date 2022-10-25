@@ -9,6 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
   const routes = ["/", "/signUp", "emailconfirmation"];
 
   const accessDenied = routes.includes(router.pathname);
+  // const accessDenied = true;
 
   console.log("accessDenied ::",accessDenied)
 
