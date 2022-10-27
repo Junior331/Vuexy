@@ -3,16 +3,16 @@ import styled from "styled-components";
 export const TableContainer = styled.table`
   width: 100%;
   border-collapse: collapse;
-  background-color: #151C2F;
+  background-color: #151c2f;
   padding: 0 25px;
 `;
 
 export const Thead = styled.thead`
-  background-color: #343D55;
+  background-color: #343d55;
 `;
 
 export const TrHead = styled.tr`
-  color: #D0D2D6;
+  color: #d0d2d6;
   background-color: #283046;
   border: 0px;
   color: #d0d2d6;
@@ -22,22 +22,21 @@ export const TrHead = styled.tr`
 
 export const ThHeader = styled.th`
   padding: 5px;
-  text-align: ${props => props.align || 'left'};
+  text-align: ${(props) => props.align || "left"};
   font-size: 12px;
   font-weight: 600;
 `;
 
-export const ThHeaderContent = styled.div`
-`;
+export const ThHeaderContent = styled.div``;
 
 export const TrBody = styled.tr`
   color: #d0d2d6;
   padding-left: 5px;
-  border-top: 2pt solid #3B4253;
+  border-top: 2pt solid #3b4253;
 `;
 
 export const TdId = styled.td`
-  color: #7367F0;
+  color: #7367f0;
   font-weight: 600;
   font-size: 14px;
 `;
@@ -45,10 +44,10 @@ export const TdId = styled.td`
 export const Tbody = styled.tbody``;
 
 export const TdBody = styled.td`
-  text-align: ${props => props.align || 'left'};
+  text-align: ${(props) => props.align || "left"};
   font-size: 14px;
   font-weight: 400;
-  color: #B4B7BD;
+  color: #b4b7bd;
 `;
 
 export const NameContainer = styled.div`
@@ -88,7 +87,7 @@ export const PaginationWrapper = styled.div`
 `;
 
 export const Img = styled.img<{
-  variant: "send" | "chart" | "arrowDownCircle";
+  variant: string;
 }>`
   --main-color: ${(props) => {
     switch (props.variant) {
@@ -105,10 +104,9 @@ export const Img = styled.img<{
   border-radius: 45px;
   padding: 7.5px 6.5px;
   background-color: ${(props) => {
-    return 'var(--main-color)';
+    return "var(--main-color)";
   }};
 `;
-
 
 // Balance styled components
 
@@ -116,14 +114,14 @@ export const BalancePaidText = styled.span`
   background-color: rgba(40, 199, 111, 0.12);
   border-radius: 17px;
   padding: 1px 9px;
-  color: #28C76F;
+  color: #28c76f;
   font-size: 12px;
 `;
 
 export const BalanceText = styled.p`
   font-weight: 400;
   font-size: 14px;
-  color: #B4B7BD;
+  color: #b4b7bd;
 `;
 
 // Actions styled components
@@ -138,7 +136,6 @@ export const ActionIcon = styled.img`
   height: 18px;
   cursor: pointer;
 `;
-
 
 // SortByColumn styled components
 

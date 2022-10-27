@@ -3,7 +3,6 @@ import { useState,useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import images from "../../../../../assets/img";
 import icons from "../../../../../assets/img/icons";
-import { products } from "../../../../../services/mocks/products";
 import { getNakamaServer } from "../../../../../utils/connectors";
 import { ProductType } from "./Components/Product/@types";
 import { YourCart } from "./Components/YourCart";
@@ -11,7 +10,7 @@ import * as S from "./HeaderStyled";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [cart, setCart] = useState(false);
+  const [cart] = useState(false); // setCart
   const token = localStorage.getItem("token");
   const [cartProducts, setCartProducts] = useState<ProductType[]>([]);
   const [profileData, setProfileData] = useState({
