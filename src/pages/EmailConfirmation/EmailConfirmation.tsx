@@ -7,6 +7,7 @@ import { getNakamaServer, nakamaHttpKey, UserResponse } from "../../utils/connec
 import * as S from "./EmailConfirmationStyled";
 
 export const EmailConfirmation = () => {
+  // const { state }: any = useLocation();
   
 
   const { state }: any = useLocation();

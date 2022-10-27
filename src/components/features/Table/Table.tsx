@@ -1,8 +1,8 @@
 import icons from "../../../assets/img/icons";
 import { LIST } from "../../../services/mocks/List";
 import { ItemList, TypeBalance } from "./@types";
+
 import * as S from "./TableStyled";
-import StatusIcon from '../../../assets/img/icons/Cube.svg';
 
 interface IColumns {
   header: string;
